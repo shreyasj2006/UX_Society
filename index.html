@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="lt-ie10 ie8" lang="en" ng-app="uxApp"><![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10 ie9" lang="en" ng-app="uxApp"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html ng-app="uxApp" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <title>UX Society</title>
+    </head>
+
+    <body ng-controller="MainController">
+
+        <div class="container">
+
+            <header class="x-pad-btm">
+                <h3>UX Society Members</h3>
+                <hr>
+            </header>
+
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" id="inputValidation" placeholder="Search"/>
+                        <label id="label_search-icon" class="glyphicon glyphicon-search form-control-feedback"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8 bordered-overflow less-width-md left-margin">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Occupation</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>ddsfds</td>
+                            <td>asdas</td>
+                            <td>asdsfsrfgwrf</td>
+                        </tr>
+                        <tr>
+                            <td>ddsfds</td>
+                            <td>asdas</td>
+                            <td>asdsfsrfgwrf</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-4 bordered-overflow less-width-sm left-margin">sdfsdfsd</div>
+            </div>
+        </div>
+
+        <script src="js/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

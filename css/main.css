@@ -1,0 +1,36 @@
+/*
+
+    @media (xtra-small-size-goes-here)
+*/
+
+#label_search-icon {
+    top: 0;
+}
+
+.bordered-overflow {
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    max-height: 80%;
+    overflow: auto;
+}
+
+.less-width-md {
+    width: 66%
+}
+
+.less-width-sm {
+    width: 30.25%;
+}
+
+.left-margin {
+    margin-left: 1.2%;
+}
+
+div:empty {
+    display: none;
+}
+
+.x-pad-btm {
+    padding-bottom: 2%;
+}
+
