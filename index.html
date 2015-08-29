@@ -15,7 +15,7 @@
         <title>UX Society</title>
     </head>
 
-    <body ng-controller="MainController">
+    <body ng-controller="MainController as mainVm">
 
         <div class="container">
 
@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="form-group col-lg-12">
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" id="inputValidation" placeholder="Search"/>
+                        <input type="search" class="form-control" ng-model="mainVm.searchInput" id="inputValidation" placeholder="Search"/>
                         <label id="label_search-icon" class="glyphicon glyphicon-search form-control-feedback"></label>
                     </div>
                 </div>
@@ -44,21 +44,31 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>ddsfds</td>
-                            <td>asdas</td>
-                            <td>asdsfsrfgwrf</td>
-                        </tr>
-                        <tr>
-                            <td>ddsfds</td>
-                            <td>asdas</td>
-                            <td>asdsfsrfgwrf</td>
+                        <tr ng-repeat="p in mainVm.people | filter:mainVm.searchInput" ng-click="mainVm.clicked(p)">
+                            <td>{{p.firstName + ' ' + p.middleInitial + ' ' + p.surname}}</td>
+                            <td>{{p.occupation}}</td>
+                            <td >{{p.company}}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="col-sm-4 bordered-overflow less-width-sm left-margin">sdfsdfsd</div>
+                <div class="col-sm-4 bordered-overflow less-width-sm left-margin" ng-hide="mainVm.hide">
+                    <div class="all-center">
+                        <div class="image-div">
+                            <img ng-src="{{mainVm.displayImage}}" />
+                        </div>
+                        <div class="name-div">
+                            <h4>{{mainVm.displayPerson.firstName + ' ' +
+                                  mainVm.displayPerson.middleInitial + ' ' +
+                                  mainVm.displayPerson.surname}}</h4>
+                        </div>
+                        <div class="occupation-div">{{mainVm.displayPerson.occupation}}</div>
+                        <div class="company-div">{{mainVm.displayPerson.company}}</div>
+                        <hr>
+                        <div class="motto-div">{{mainVm.displayPerson.motto}}</div>
+                    </div>
+                </div>
             </div>
         </div>
 
