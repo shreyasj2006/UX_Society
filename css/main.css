@@ -10,7 +10,7 @@
 .bordered-overflow {
     border: 1px solid lightgrey;
     border-radius: 4px;
-    max-height: 35em;
+    max-height: 32em;
     overflow: auto;
 }
 
@@ -70,4 +70,9 @@ div:empty {
 
 tbody tr:hover {
     cursor: pointer;
+}
+
+.footer-div {
+    color: #999999;
+    padding-bottom: 5%;
 }

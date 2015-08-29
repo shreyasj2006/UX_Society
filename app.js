@@ -15,7 +15,7 @@
 
         mainVm.displayPerson = null;
 
-        mainVm.displayImage = '';
+        mainVm.displayImage = null;
 
         mainVm.hide = true;
 
