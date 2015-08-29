@@ -10,7 +10,9 @@
 
     angular.module('uxApp').controller('MainController',MainController);
 
-    function MainController() {
+    MainController.$inject = ["$http"];
+
+    function MainController($http) {
         var mainVm = this;
 
         mainVm.displayPerson = null;
@@ -18,6 +20,9 @@
         mainVm.displayImage = null;
 
         mainVm.hide = true;
+
+        mainVm.hideLoadMessage = false;
+        mainVm.hideDataDiv = true;
 
         mainVm.clicked = function(p) {
             mainVm.displayPerson = p;
@@ -31,7 +36,18 @@
             mainVm.hide = false;
         };
 
-        mainVm.people = [{
+        $http.get('http://private-a73e-aquentuxsociety.apiary-mock.com/members').then(
+            function(response) {
+                mainVm.people = response.data;
+                mainVm.hideLoadMessage = true;
+                mainVm.hideDataDiv = false;
+                mainVm.searchInput = '';
+            }
+        );
+        console.dir(mainVm.people);
+
+
+            /*[{
             "id":1,
             "gender":"male",
             "title":"Mr.",
@@ -1175,6 +1191,7 @@
                 "motto":"A narrow mind is usually accompanied by a wide mouth.",
                 "portrait":"http://s1.postimg.org/j5mytq3iz/profile.jpg"
             }];
+            */
     }
 
 })();
