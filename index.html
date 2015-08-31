@@ -34,31 +34,38 @@
                 </div>
             </div>
 
-            <div class="row text-center min-height-div" ng-hide="mainVm.hideLoadMessage">
-                <h4 class="loading-text">Loading...</h4>
+            <div class="row " ng-hide="mainVm.hideLoadMessage">
+                <div class="col-sm-12 text-center min-height-div">
+                    <h4 class="loading-text">Loading...</h4>
+                </div>
             </div>
 
             <div class="row" ng-hide="mainVm.hideDataDiv">
                 <div class="col-sm-8 bordered-overflow less-width-md left-margin">
                     <table class="table table-hover table-striped">
                         <thead>
-                        <tr>
-                            <th>Name</th>
+                        <tr ng-init="mainVm.sorter='firstName'; mainVm.reverse=false">
+                            <th class="cursor-pointer" ng-click="mainVm.sorter='firstName'; mainVm.reverse = !mainVm.reverse">
+                                Name <span class="glyphicon glyphicon-sort"></span>
+                            </th>
                             <th>Occupation</th>
                             <th>Company</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="p in mainVm.people | filter:mainVm.searchInput" ng-click="mainVm.clicked(p)">
+                        <tr ng-repeat="p in mainVm.people | filter:mainVm.searchInput | orderBy:mainVm.sorter:mainVm.reverse"
+                            ng-click="mainVm.person = p; mainVm.hide = false;">
                             <td>{{p.firstName + ' ' + p.middleInitial + ' ' + p.surname}}</td>
                             <td>{{p.occupation}}</td>
-                            <td >{{p.company}}</td>
+                            <td>{{p.company}}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="col-sm-4 less-width-sm left-margin text-center" ng-include="'displayPerson.html'"></div>
+                <div class="col-sm-4 less-width-sm left-margin text-center" ng-include="'person-tmpl.html'">
+                    <ux-member member="mainVm.person"></ux-member>
+                </div>
             </div>
 
             <div class="all-center footer-div">
@@ -68,15 +75,14 @@
                 </footer>
             </div>
 
-
         </div>
-
-
 
         <!-- Script files -->
         <script src="js/angular.min.js"></script>
-        <script src="app.js"></script>
-
+        <script src="app/app.js"></script>
+        <script src="app/controllers/MainController.js"></script>
+        <script src="app/services/data-service.js"></script>
+        <script src="app/directives/ux-dir.js"></script>
 
     </body>
 </html>

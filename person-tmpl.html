@@ -1,0 +1,13 @@
+<div class="bordered-overflow internal-padding" ng-hide="mainVm.hide">
+    <span class="glyphicon glyphicon-remove pull-right" ng-click="mainVm.hide=true"></span>
+    <div class="image-div">
+        <img class="display-image" ng-src="{{'images/icon_' + mainVm.person.gender + '.png'}}" />
+    </div>
+    <div class="name-div">
+        <h4>{{mainVm.person.firstName + ' ' + mainVm.person.middleInitial + ' ' + mainVm.person.surname}}</h4>
+    </div>
+    <div class="occupation-div">{{mainVm.person.occupation}}</div>
+    <div class="company-div">{{mainVm.person.company}}</div>
+    <hr>
+    <div class="motto-div">{{mainVm.person.motto}}</div>
+</div>

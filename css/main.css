@@ -107,3 +107,11 @@ tbody tr:hover {
     max-height: 10em;
     max-width: 10em;
 }
+
+.cursor-pointer:hover {
+    cursor: default;
+}
+
+.glyphicon {
+    color: #888;
+}
