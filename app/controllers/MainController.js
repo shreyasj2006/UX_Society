@@ -1,15 +1,21 @@
+/*
+    The main controller of the app
+ */
+
 (function() {
+    'use strict';
 
     angular
         .module('uxApp')
-        .controller('MainController',MainController);
+        .controller('MainController',MainControllerFn);
 
-    MainController.$inject = ['dataService'];
-    function MainController(dataService) {
+    MainControllerFn.$inject = ['dataService'];
+    function MainControllerFn(dataService) {
 
         var mainVm = this;
 
-        mainVm.hide = true;
+        // Variables used to control what div's are shown to the user
+        mainVm.hideMember = true;
         mainVm.hideLoadMessage = false;
         mainVm.hideDataDiv = true;
 

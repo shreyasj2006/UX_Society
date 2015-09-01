@@ -1,12 +1,16 @@
+/*
+    Data service to get data
+ */
+
 (function() {
     'use strict';
 
     angular
         .module('uxApp')
-        .service('dataService',dataService);
+        .service('dataService',dataServiceFn);
 
-    dataService.inject = ['$q', '$http'];
-    function dataService($q, $http) {
+    dataServiceFn.inject = ['$q', '$http'];
+    function dataServiceFn($q, $http) {
         var self = this;
 
         self.getMembers = function() {

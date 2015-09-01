@@ -1,3 +1,7 @@
+/*
+    Directive to render information about a single user on the right side of the screen
+ */
+
 (function() {
     'use strict';
 

@@ -54,7 +54,7 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="p in mainVm.people | filter:mainVm.searchInput | orderBy:mainVm.sorter:mainVm.reverse"
-                            ng-click="mainVm.person = p; mainVm.hide = false;">
+                            ng-click="mainVm.person = p; mainVm.hideMember = false;">
                             <td>{{p.firstName + ' ' + p.middleInitial + ' ' + p.surname}}</td>
                             <td>{{p.occupation}}</td>
                             <td>{{p.company}}</td>
@@ -82,7 +82,7 @@
         <script src="app/app.js"></script>
         <script src="app/controllers/MainController.js"></script>
         <script src="app/services/data-service.js"></script>
-        <script src="app/directives/ux-dir.js"></script>
+        <script src="app/directives/ux-directive.js"></script>
 
     </body>
 </html>
